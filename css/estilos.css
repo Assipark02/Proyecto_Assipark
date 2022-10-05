@@ -1,0 +1,70 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.caja {
+    display: flex;
+    margin: auto;
+    width: 497px;
+    padding: 8px;
+    border: solid;
+    background: rgb(245, 241, 241);
+    border-color: rgb(226, 220, 220);
+}
+
+.container {
+    width: 500px;
+    margin: auto;
+    border: solid;
+    border-color: rgb(226, 220, 220);
+    top: 250px;
+    left: 2px;
+    position: relative;
+}
+
+.reestablecer {
+    background: rgb(48, 109, 221);
+    padding: 6px;
+    color: white;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.correo {
+    display: flex;
+}
+
+.password {
+    display: flex;
+}
+
+.email {
+    padding: 4px;
+    display: flex;
+    width: 274px;
+    margin: auto;
+    height: 33px;
+}
+
+.contraaseña {
+    padding: 4px;
+    display: flex;
+    width: 269px;
+    margin: auto;
+    height: 33px;
+}
+
+.nueva_c {
+    padding: 4px;
+    display: flex;
+    width: 292px;
+    margin: auto;
+    height: 33px;
+}
+
+.form__button {
+    width: 145px;
+    margin: auto;
+}

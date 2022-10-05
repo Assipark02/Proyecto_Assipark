@@ -1,0 +1,195 @@
+* {
+    padding: 0;
+}
+
+body {
+    background-color: rgb(248, 248, 248);
+}
+
+.menu {
+    width: 100%;
+    height: 5rem;
+    background: linear-gradient(to bottom, #a5fecb, #20bdff, #5433ff);
+    position: relative;
+}
+
+
+/* Css para imagen del contenedor botones*/
+
+.menu .image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.menu .image #logo {
+    width: 14.3rem;
+    height: 4rem;
+}
+
+
+/*Contenedor de los botones de navegación */
+
+.menu .boton {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0.1rem;
+    left: 15rem;
+}
+
+
+/* Estilos para etiquetas <a>*/
+
+.menu .link {
+    position: relative;
+    padding: 8px 22px;
+    margin: 35px 0px;
+    color: white;
+    text-decoration: none;
+    font: bold;
+    font-size: 13px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.menu .link::before {
+    content: " ";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid white;
+    border-left: 2px solid white;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.menu .link::after {
+    content: " ";
+    position: absolute;
+    bottom: -1px;
+    right: -1px;
+    height: 7px;
+    width: 7px;
+    border-bottom: 2px solid white;
+    border-right: 2px solid white;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+}
+
+.menu .link:hover::before,
+.menu .link:hover::after {
+    width: 100%;
+    height: 100%;
+    transition-delay: 0s;
+}
+
+.menu .link:hover {
+    background: #a5fecb;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 0 0 50px #a5fecb;
+    transition-delay: 0.2s;
+}
+
+
+/* Boton Inicio de Sesion*/
+
+.button {
+    position: relative;
+    padding: 1em 1.5em;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    outline: 0;
+    font-size: 14px;
+    margin: 1em 0.8em;
+}
+
+.button.type1 {
+    color: white;
+}
+
+.button.type1.type1::after,
+.button.type1.type1::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    border: 2px solid;
+    transition: all 0.6s ease;
+    border-radius: 2px;
+}
+
+.button.type1.type1::after {
+    bottom: 0;
+    right: 0;
+    border-color: transparent white white transparent;
+}
+
+.button.type1.type1::before {
+    top: 0;
+    left: 0;
+    font-weight: bolder;
+    border-color: white transparent transparent white;
+}
+
+.button.type1.type1:hover:after,
+.button.type1.type1:hover:before {
+    width: 100%;
+    height: 100%;
+}
+
+.button.type1:hover {
+    background: #5433ff;
+    color: white;
+    font-weight: bolder;
+    box-shadow: 0 0 50px #5433ff;
+    transition-delay: 0.1s;
+}
+
+.cont {
+    display: flex;
+    width: 100%;
+    height: auto;
+}
+
+.cont .text {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.cont_text {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+p {
+    text-align: justify;
+    font-size: 20px;
+    padding: 0;
+}
+
+.cont .img {
+    position: relative;
+    display: flex;
+    flex: 1;
+    right: 10%;
+}
+
+.img #parqueadero {
+    height: 100%;
+    width: 100%;
+}
