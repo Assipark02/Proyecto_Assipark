@@ -1,0 +1,130 @@
+
+CREATE TABLE Usuario(
+    id_numero_Identificacion INT(10) PRIMARY KEY,
+    IDtipo_Usuario INT(10) NOT null,
+    IDtipo_identificacion INT(10) not null,
+    Nombre VARCHAR(45) NOT NULL,
+    Apellido VARCHAR(45) NOT NULL,
+    Sexo BOOLEAN NOT NULL, 
+    Direccion VARCHAR(40) NOT NULL,
+    Telefono INT(10) NOT NULL,
+    Celular INT(10) NOT NULL,
+    Email VARCHAR(50) NOT NULL,
+    Contraseña VARCHAR(100) NOT NULL,
+    estado_Usuario BOOLEAN NOT NULL);
+                        
+CREATE TABLE Tipo_usuario(
+    id_tipo_Usuario INT(10)  PRIMARY KEY,
+    tipo_Usuario VARCHAR(30) NOT NULL);
+   
+CREATE TABLE  Tipo_identificacion(
+    id_tipo_Identificacion INT(10) PRIMARY KEY,
+    Identificacion VARCHAR(30) NOT NULL);
+
+CREATE TABLE Visitas(
+    id_Visitas VARCHAR(30) NOT NULL PRIMARY KEY,
+    IDapartamento INT(5) NOT NULL,
+    IDvisitantes INT(10) NOT NULL,
+    IDvehiculo INT(20) NOT NULL,
+    IDparqueaderos INT(20) NOT NULL,
+    IDusuario_numero_Identificacion INT(10) NOT NULL,
+    inicio_Visita DATETIME NOT NULL,
+    fin_Visita DATETIME NOT NULL);
+
+CREATE TABLE Parqueaderos(
+    id_Parqueaderos INT(20) PRIMARY KEY,
+    IDtipo_parqueadero INT(3) NOT NULL,
+    Tamaño VARCHAR(20) NOT NULL,
+    Descripcion VARCHAR(255) NOT NULL,
+    estado_Parqueadero BOOLEAN  NOT NULL, 
+    Ocupado BOOLEAN NOT NULL);
+    
+CREATE TABLE Parqueadero_visitas(
+    id_parqueadero_Visitas INT(20) NOT NULL PRIMARY KEY,
+    IDtipo_Parqueadero INT(3) NOT NULL,
+    Tamaño VARCHAR(20) NOT NULL,
+    Descripcion VARCHAR(255) NOT NULL,
+    estado_Parqueadero BOOLEAN NOT NULL,
+    Ocupado BOOLEAN NOT NULL);
+
+CREATE TABLE Apartamento(
+    id_Apartamento INT(5) PRIMARY KEY,
+    IDnumero_apto INT(20) NOT NULL,
+    IDbloque INT(20) NOT NULL,
+    estado_Apto BOOLEAN NOT NULL);
+    
+CREATE TABLE Numero_apartamento(
+    id_numero_Apartamento INT(20) NOT NULL PRIMARY KEY,
+    numero_Apto INT(5) NOT NULL);
+
+CREATE TABLE Bloque (
+    id_Bloque INT(20) PRIMARY KEY,
+    Bloque CHAR(10) NOT NULL);
+    
+CREATE TABLE Detalles_Asignaciones(
+    id_detalles_Asignaciones INT(20) PRIMARY KEY,
+    IDapartamento INT(5) NOT NULL,
+    IDvehiculo INT(20) NOT NULL,
+    IDparqueadero INT(20) NOT NULL,
+    Inicio DATETIME NOT NULL,
+    Fin DATETIME NOT NULL);
+
+CREATE TABLE Vehiculos(
+    id_Vehiculos INT(20) PRIMARY KEY,
+    IDnumero_identificacion INT(10) NOT NULL, 
+    IDmarca INT(3) NOT NULL,
+    IDColor INT(3) NOT NULL,
+    IDtipo_Parqueadero INT(3) NOT NULL,
+    Placa VARCHAR(7) NOT NULL,
+    estado_Vehiculo BOOLEAN NOT NULL);
+    
+CREATE TABLE Marca (
+    id_Marca INT(3) NOT NULL PRIMARY KEY,
+    Marca VARCHAR(20) NOT NULL);
+
+CREATE TABLE Color (
+    id_Color INT(3) NOT NULL PRIMARY KEY,
+    Color VARCHAR(30) NOT NULL);
+    
+CREATE TABLE Residentes (
+    id_numero_Identificacion INT(10) PRIMARY KEY,
+    IDtipo_Identificacion INT(3) NOT NULL,
+    Nombre VARCHAR(45) NOT NULL,
+    Apellido VARCHAR(45) NOT NULL,
+    Sexo BOOLEAN NOT NULL,
+    Telefono INT(10) NOT NULL, 
+    Celular1 INT(10) NOT NULL,
+    Celular2 INT(10) NOT NULL,
+    Email VARCHAR(35) NOT NULL,
+    IDapartamento INT(5) NOT NULL,
+    estado_Residente BOOLEAN NOT NULL);
+    
+CREATE TABLE Tipo_parqueadero_vehiculo( 
+id_tipo_parqueadero_vehiculo INT(3) PRIMARY KEY, 
+Tipo_parqueadero_vehiculo VARCHAR(20) NOT NULL);
+
+FOREIGN KEYS:
+
+ALTER TABLE usuario ADD FOREIGN KEY(IDtipo_Usuario) REFERENCES tipo_usuario(id_tipo_Usuario)
+ALTER TABLE usuario ADD FOREIGN KEY(IDtipo_Identificacion) REFERENCES tipo_identificacion(id_tipo_Identificacion)
+ALTER TABLE parqueadero_visitas ADD FOREIGN KEY(IDtipo_Parqueadero) REFERENCES tipo_parqueadero_vehiculo(id_tipo_parqueadero_vehiculo)
+ALTER TABLE visitas ADD FOREIGN( IDparqueaderos) REFERENCES parqueadero_visitas(id_parqueadero_Visitas)
+ALTER TABLE visitas ADD FOREIGN KEY(IDparqueaderos)REFERENCES parqueadero_visitas(id_parqueadero_Visitas)
+ALTER TABLE visitas ADD FOREIGN KEY(IDvehiculo) REFERENCES vehiculos(id_Vehiculos)
+ALTER TABLE visitas ADD FOREIGN KEY(IDvisitantes) REFERENCES visitantes(id_Visitantes)
+ALTER TABLE visitas ADD FOREIGN KEY(IDapartamento) REFERENCES apartamento(id_Apartamento)
+ALTER TABLE vehiculos ADD FOREIGN KEY(IDtipo_Parqueadero)REFERENCES parqueadero_visitas(id_parqueadero_Visitas)
+ALTER TABLE vehiculos ADD FOREIGN KEY(IDcolor)REFERENCES color(id_Color)
+ALTER TABLE vehiculos ADD FOREIGN KEY(IDmarca) REFERENCES marca(id_Marca)
+ALTER TABLE vehiculos ADD FOREIGN KEY(IDnumero_identificacion) REFERENCES residentes( id_numero_Identificacion)
+ALTER TABLE detalles_asignaciones ADD FOREIGN KEY(IDvehiculo) REFERENCES apartamento( id_Apartamento)
+ALTER TABLE detalles_asignaciones ADD FOREIGN KEY(IDparqueadero) REFERENCES parqueaderos(id_Parqueaderos)
+ALTER TABLE apartamento ADD FOREIGN KEY(IDnumero_Apto) REFERENCES numero_apartamento(id_numero_Apartamento)
+ALTER TABLE apartamento ADD FOREIGN KEY(IDbloque) REFERENCES bloque(id_Bloque)
+ALTER TABLE parqueaderos ADD FOREIGN KEY(IDtipo_parqueadero) REFERENCES tipo_parqueadero_vehiculo(id_tipo_parqueadero_vehiculo)
+ALTER TABLE residentes ADD FOREIGN KEY(Itipo_Identificacion) REFERENCES tipo_identificacion( id_tipo_Identificacion)
+ALTER TABLE residentes ADD FOREIGN KEY(IDapartamento) REFERENCES apartamento( id_Apartamento)
+
+
+    
+   
