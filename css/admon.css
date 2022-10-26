@@ -13,6 +13,12 @@ body{
     margin-top: 80px;
     transition: margin-left 300ms cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
+img{
+    height: 85px;
+    width: 85px;
+    margin-left: 0;
+    margin-bottom: 5px;
+}
 
 main{
     padding: 20px;
