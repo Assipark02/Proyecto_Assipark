@@ -1,10 +1,10 @@
-var mysql =  require('mysql');
+const mysql =  require('mysql');
 
-var conexion = mysql.createConnection({
-    host: 'localhots',
-    database: 'usuarios_db',
-    user:'root',
-    password: ' '
+let conexion = mysql.createConnection({
+    host:'localhost',
+    user: 'root',
+    password: '',
+    database: 'assipark'
 });
 
 conexion.connect(function(error){
