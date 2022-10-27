@@ -1,8 +1,8 @@
 {
   "name": "proyecto_assipark",
   "version": "1.0.0",
-  "description": "Conexion de mysql de nodejs",
-  "main": "app.js",
+  "description": "",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Assipark02/Proyecto_Assipark.git"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
