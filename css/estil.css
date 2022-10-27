@@ -24,12 +24,26 @@ img {
 
 
 .caja1 {
-    margin: auto;
+    margin: 30px;
     position: relative;
     top: 160px;
-    left: 190px;
+    left: 290px;
     right: 4px;
     width: 800px;
+    border: rgb(48, 109, 221);
+}
+
+.caja1 h1{
+    font-size: 35px;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.caja1 p{
+    margin-bottom: 20px;
+    position: relative;
+    text-align: justify;
+    right: 45px;
 }
 
 .Enviar {
@@ -63,5 +77,10 @@ img {
     font-size: 13px;
     cursor: pointer;
     border: rgb(48, 109, 221);
-}
+} 
 
+::placeholder {
+    color: rgb(120, 117, 117);
+    text-align: center;
+    padding-top: 30px;
+  }
