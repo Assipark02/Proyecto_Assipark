@@ -23,6 +23,16 @@ body {
   height: 40px;
   width: 40px;
 }
+table {
+  border: 1px solid #000;
+  border-collapse: separate;
+  width: 95%;
+  height: auto;
+}
+
+td,tr,th {
+  border: 1px solid #555;
+}
 .tUsuario {
   background: #ffffff;
   display: flex;
