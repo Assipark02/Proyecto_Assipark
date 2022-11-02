@@ -1,7 +1,7 @@
 const mysql = require('mysql')
 
 let conection = mysql.createConnection({
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'assipark'
@@ -9,7 +9,7 @@ let conection = mysql.createConnection({
 
 conection.connect((err) =>{
     if(err) throw err
-    console.log('CONEXION EXITOSA 7U7')
+    console.log('CONEXION EXITOSA 7u7')
 })
 
 conection.end()
