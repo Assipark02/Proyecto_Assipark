@@ -25,7 +25,14 @@ body {
   height: 40px;
   width: 40px;
 }
-
+.tUsuario {
+  background: #ffffff;
+  display: flex;
+  /* align-content: flex-end;
+align-items: flex-end;
+justify-content: flex-end; */
+  justify-items: flex-end;
+}
 .content {
   display: grid;
   gap: 10px;

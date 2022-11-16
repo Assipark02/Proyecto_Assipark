@@ -1,12 +1,13 @@
 body {
     background-image: url(../img/fondo.jpg);
-    background-size: 1650px;
-    background-position: right 790px;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 img {
-    top: 105px;
-    left: 135px;
+    top: 75px;
+    left: 115px;
     position: absolute;
     float: left;
 }
@@ -16,7 +17,7 @@ img {
     height: 420px;
     color: rgb(109, 109, 109);
     top: 62%;
-    left: 65%;
+    left: 75%;
     position: absolute;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
