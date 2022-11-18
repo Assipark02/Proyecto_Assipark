@@ -12,7 +12,7 @@ img {
     float: left;
 }
 
-.login-box {
+.formulario {
     width: 320px;
     height: 420px;
     color: rgb(109, 109, 109);
@@ -24,7 +24,7 @@ img {
     padding: 70px 30px;
 }
 
-.login-box .avatar {
+.formulario .avatar {
     width: 100px;
     height: 100px;
     position: absolute;
@@ -32,7 +32,7 @@ img {
     left: calc(50% - 50px);
 }
 
-.login-box h1 {
+.formulario h1 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;
@@ -40,29 +40,34 @@ img {
     font-family: 'Roboto', sans-serif;
 }
 
-.login-box label {
+.formulario label {
     margin: 0;
     padding: 0;
     font-weight: bold;
     display: block;
+    position: relative;
 }
 
-.login-box input {
+.formulario input {
     width: 100%;
     margin-bottom: 20px;
 }
 
-.login-box input[type="text"],
-.login-box input[type="password"] {
+.formulario input[type="text"],
+.formulario input[type="password"] {
     border-radius: 20px;
     background: rgb(231, 231, 231);
     border: none;
     height: 40px;
-    color: black;
+    float: left;
     font-size: 16px;
 }
 
-.login-box input[type="submit"] {
+.formulario__input-error-activo {
+	display: block;
+}
+
+.formulario input[type="submit"] {
     border: none;
     outline: none;
     height: 40px;
@@ -72,13 +77,13 @@ img {
     border-radius: 20px;
 }
 
-.login-box input[type="submit"]:hover {
+.formulario input[type="submit"]:hover {
     cursor: pointer;
     background: darkgrey;
     color: #fff;
 }
 
-.login-box a {
+.formulario a {
     text-decoration: none;
     font-size: 12px;
     line-height: 20px;
@@ -87,6 +92,38 @@ img {
     left: 68px;
 }
 
-.login-box a:hover {
+.formulario a:hover {
     color: #378ee6;
+}
+
+#icono1{
+    position: relative;
+    bottom: 50px;
+    left: 235px;
+}
+
+#icono2{
+    position: relative;
+    bottom: 50px;
+    left: 235px;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+.formulario__grupo-correcto .formulario__validacion-estado {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label {
+	color: #bb2929;
+    position: relative;
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input {
+	border: 3px solid #bb2929;
 }

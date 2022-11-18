@@ -9,7 +9,8 @@ let conection = mysql.createConnection({
 
 conection.connect((err) =>{
     if(err) throw err
-    console.log('CONEXION EXITOSA 7u7')
+    console.log('CONEXION EXITOSA UwU')
 })
+
 
 conection.end()

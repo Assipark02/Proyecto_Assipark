@@ -16,23 +16,32 @@
 <body>
 
     <img src="img/LOGIN_IMG.png" alt="Imagen">
-    <div class="login-box">
+    <div class="formulario" id="formulario">
         <h1>Iniciar Sesión</h1>
         <img class="avatar" src="img/LOGO_FINAL_ASSIPARK.jpg">
 
         <form>
-            <label for="username"></label>
-            <input type="text" placeholder="Ingrese usuario">
+            <div id="grupo__correo">
+                <label for="username"></label>
+                <input type="text" placeholder="Ingrese usuario"  class="formulario__input" id="correo" name="correo">
+                <i id="icono1" class="formulario__validacion-estado fas fa-times-circle"></i>
+   
+            </div>
+            
 
-            <label for="password"></label>
-            <input type="password" placeholder="Contraseña">
-            <input type="submit" value="Iniciar Sesión">
+            <div id="grupo__password">
+                <label for="password"></label>
+                <input type="password" placeholder="Contraseña" class="formulario__input" id="password" name="password">
+                <i id="icono2" class="formulario__validacion-estado fas fa-times-circle"></i>
+            </div>   
+            <input type="submit" value="Iniciar Sesión"  >
             <a href="olvidaste tu contraseña.html">¿Olvidaste tu constraseña?</a>
         </form>
     </div>
+    <p class="formulario__input-error"></p>
 
-
-
+    <script src="js/login.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

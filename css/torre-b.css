@@ -50,6 +50,11 @@ body{
     padding: 20px;
 }
 
+.titulo{
+    position: relative;
+    right: 20%;
+}
+
 #main-container{
 	margin: 150px auto;
 	width: 600px;
@@ -80,6 +85,3 @@ tr:hover td{
 	background-color: #4c7bb1;
 	color: rgb(104, 158, 194);
 }
-
-
-
